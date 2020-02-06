@@ -6,7 +6,7 @@
 	(#{name},#{amount},#{manager},#{content},#{dept_id})
 	</insert>
 	
-	<delete id="delete">
+	<delete id="deleteByIds">
 		DELETE FROM zhunneng_plan WHERE id in(${ids})
 	</delete>
 	
