@@ -16,6 +16,17 @@ public class Plan implements Serializable{
 	private String content;
 	private Integer dept_id;
 	
+	
+	
+	public Plan(Integer id, String name, BigDecimal amount, String manager, String content, Integer dept_id) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.amount = amount;
+		this.manager = manager;
+		this.content = content;
+		this.dept_id = dept_id;
+	}
 	public Integer getId() {
 		return id;
 	}

@@ -3,7 +3,9 @@ package com.zhangguoming.zhoukao.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
+import com.zhangguoming.zhoukao.pojo.Department;
 import com.zhangguoming.zhoukao.pojo.Plan;
 
 public interface DepartmentDao {
@@ -15,7 +17,7 @@ public interface DepartmentDao {
 	 * @return: int      
 	 * @throws
 	 */
-	int insert(Plan plan);
+	int insert(Department department);
 	/**
 	 * @Title: deleteByIds   
 	 * @Description: 删除   
@@ -33,7 +35,7 @@ public interface DepartmentDao {
 	 * @return: int      
 	 * @throws
 	 */
-	int update(Plan plan);
+	int update(Department department);
 	/**
 	 * @Title: selectById   
 	 * @Description: 根据Id查询对象   
@@ -42,7 +44,7 @@ public interface DepartmentDao {
 	 * @return: Plan      
 	 * @throws
 	 */
-	Plan selectById(Integer id);
+	Department selectById(Integer id);
 	/**
 	 * @Title: select   
 	 * @Description: 根据条件查询数据   
@@ -51,5 +53,15 @@ public interface DepartmentDao {
 	 * @return: List<Plan>      
 	 * @throws
 	 */
-	List<Plan> select(Plan plan);
+	List<Department> select(Department department);
+	/**
+	 * @Title: selectByName   
+	 * @Description: 根据部门名称，查询部门   
+	 * @param: @param deptName
+	 * @param: @return      
+	 * @return: Department      
+	 * @throws
+	 */
+	@Select("SELECT * FROM zhunneng_department WHERE `name`=#{deptName}")
+	Department selectByName(String deptName);
 }
