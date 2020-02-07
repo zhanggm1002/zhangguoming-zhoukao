@@ -16,6 +16,9 @@ public class Plan implements Serializable{
 	private String content;
 	private Integer dept_id;
 	
+
+	private String dept_name;
+	
 	
 	
 	public Plan(Integer id, String name, BigDecimal amount, String manager, String content, Integer dept_id) {
@@ -62,6 +65,13 @@ public class Plan implements Serializable{
 	}
 	public void setDept_id(Integer dept_id) {
 		this.dept_id = dept_id;
+	}
+	
+	public String getDept_name() {
+		return dept_name;
+	}
+	public void setDept_name(String dept_name) {
+		this.dept_name = dept_name;
 	}
 	@Override
 	public String toString() {

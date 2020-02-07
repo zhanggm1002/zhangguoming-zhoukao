@@ -22,5 +22,10 @@
 	
 	<select id="select"  resultType="Plan">
 		SELECT * FROM zhunneng_plan
+		<where>
+			<if test="name!=null">
+				name like '%${name}%' 
+			</if>
+		</where>
 	</select>
 </mapper>
